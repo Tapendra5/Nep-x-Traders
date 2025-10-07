@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ne">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nep-X Trader 📈📊</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- LOGIN/REGISTER -->
+  <div id="auth-section">
+    <h1>Nep-X Trader 📈📊</h1>
+    <div id="login-form" class="card">
+      <input id="login-email" placeholder="Email" />
+      <input id="login-pass" type="password" placeholder="Password" />
+      <button id="btn-login">Login</button>
+      <p>Don't have account? <a href="#" id="show-register">Register</a></p>
+      <p id="auth-msg" class="error"></p>
+    </div>
+    <div id="register-form" class="card hidden">
+      <input id="reg-name" placeholder="Full name" />
+      <input id="reg-email" placeholder="Email" />
+      <input id="reg-pass" type="password" placeholder="Password" />
+      <button id="btn-register">Register</button>
+      <p>Already have account? <a href="#" id="show-login">Login</a></p>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="app-section" class="hidden">
+    <div class="card">
+      <h2>Welcome, <span id="user-name"></span></h2>
+      <p>Wallet: Rs. <b id="user-balance">0</b></p>
+
+      <!-- Packages -->
+      <h3>Packages 📦</h3>
+      <div id="packages"></div>
+
+      <!-- Investment Table -->
+      <h3>Investments 📈📊</h3>
+      <table id="investment-table">
+        <tr><th>Invest</th><th>Profit</th></tr>
+        <tr><td>500💲</td><td>1200💲</td></tr>
+        <tr><td>600💲</td><td>1400💲</td></tr>
+        <tr><td>1000💲</td><td>2300💲</td></tr>
+        <tr><td>1500💲</td><td>3200💲</td></tr>
+        <tr><td>3000💲</td><td>7000💲</td></tr>
+      </table>
+
+      <!-- New Rewards -->
+      <h3>New Rewards 💰</h3>
+      <ul>
+        <li>Daily Check</li>
+        <li>Trader</li>
+        <li>Bonus</li>
+        <li>Referral</li>
+      </ul>
+
+      <button id="btn-recharge-view">Withdraw 💳</button>
+      <button id="btn-history-view">History ⏺️</button>
+      <button id="btn-logout" class="danger">Logout</button>
+    </div>
+
+    <!-- Withdraw -->
+    <div id="withdraw-card" class="card hidden">
+      <h3>Withdraw 💳</h3>
+      <label>Amount:</label>
+      <input type="number" id="withdraw-amount" placeholder="Enter amount" />
+      <label>Choose Method:</label>
+      <div id="payment-methods">
+        <img src="assets/icons/esewa.png" alt="eSewa" class="pay-icon" data-method="eSewa"/>
+        <img src="assets/icons/khalti.png" alt="Khalti" class="pay-icon" data-method="Khalti"/>
+        <img src="assets/icons/paypal.png" alt="PayPal" class="pay-icon" data-method="PayPal"/>
+        <img src="assets/icons/bank.png" alt="Bank" class="pay-icon" data-method="Bank"/>
+      </div>
+      <input type="text" id="withdraw-id" placeholder="Wallet ID / Account" />
+      <button id="btn-withdraw-submit">Submit Withdraw</button>
+    </div>
+
+    <!-- History -->
+    <div id="history-card" class="card hidden">
+      <h3>Transaction History ⏺️</h3>
+      <table id="history-table">
+        <tr><th>Username</th><th>Amount</th><th>Date 📅</th><th>Status</th></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+  </html>
