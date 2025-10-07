@@ -1,0 +1,53 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg,#007bff,#00bfff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+}
+.wrap{width:360px;}
+.card{
+  background: rgba(255,255,255,0.12);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+.card:hover{transform: translateY(-4px);}
+input{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:none;outline:none;}
+button{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  background:#fff;
+  color:#007bff;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:6px;
+  transition: background 0.2s,color 0.2s;
+}
+button:hover{background:#007bff;color:#fff;}
+button.danger{background:#ff6b6b;color:white;}
+.hidden{display:none;}
+.error{color:#ffdddd;}
+#packages .package-card{
+  background: rgba(255,255,255,0.2);
+  padding:12px;
+  margin:8px 0;
+  border-radius:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+#packages button{width:auto;padding:6px 12px;font-size:14px;}
+#withdraw-card,#history-card{margin-top:12px;}
+#withdraw-card input,#history-card input{margin-bottom:6px;}
+.pay-icon{width:50px;margin-right:8px;cursor:pointer;border:2px solid transparent;border-radius:8px;}
+.pay-icon.selected{border-color:#fff;}
+table{width:100%;border-collapse:collapse;margin-top:8px;}
+th,td{border:1px solid #fff;padding:6px;text-align:center;}
